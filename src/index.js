@@ -28,7 +28,7 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   windElement.innerHTML = `${response.data.wind.speed} km/h`;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-temperature-icon" />`;
 
   console.log(response.data);
 }
