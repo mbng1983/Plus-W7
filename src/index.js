@@ -18,8 +18,8 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   temperatureElement.innerHTML = `${temperature}`;
   descriptionElement.innerHTML = response.data.condition.description;
-  windElement.innerHTML = response.data.wind.speed;
-  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = `${response.data.wind.speed} km/h`;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   console.log(response.data);
 }
 
