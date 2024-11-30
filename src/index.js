@@ -13,7 +13,14 @@ function search(event) {
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#tempValue");
   let temperature = Math.round(response.data.temperature.current);
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   temperatureElement.innerHTML = `${temperature}`;
+  descriptionElement.innerHTML = response.data.condition.description;
+  windElement.innerHTML = response.data.wind.speed;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  console.log(response.data);
 }
 
 function formatDate(date) {
