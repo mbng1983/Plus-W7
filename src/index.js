@@ -3,10 +3,14 @@ let apiKey = "ba0fetb7543250d46c1o5b9aee3092a1";
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
-  cityElement.innerHTML = searchInputElement.value;
+  searchCity(searchInputElement.value);
+}
 
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInputElement.value}&key=${apiKey}&unit=metric`;
+function searchCity(city) {
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = city;
+
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -62,3 +66,5 @@ searchForm.addEventListener("submit", search);
 let currentDateElement = document.querySelector("#current-date");
 let currentDate = new Date();
 currentDateElement.innerHTML = formatDate(currentDate);
+
+searchCity("Guarulhos");
